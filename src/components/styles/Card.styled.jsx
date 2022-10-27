@@ -6,11 +6,6 @@ const Flex = styled.div`
   justify-content: space-between;
   gap: 2rem;
   margin: 2rem;
-
-  @media (max-width: ${({ theme }) => theme.responsive}) {
-    flex-direction: column;
-    text-align: center;
-  }
 `;
 
 export default Flex;
@@ -23,8 +18,15 @@ export const StyledCard = styled.div`
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  height: 45vh;
+  /* height: 100vh; */
+  @media (max-width: ${({ theme }) => theme.res}) {
+    flex-direction: row;
+  }
+  @media (max-width: ${({ theme }) => theme.resp}) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const Resim = styled.img`

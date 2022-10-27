@@ -13,6 +13,8 @@ const style = {
   },
   margins: {},
   responsive: "768px",
+  res: "1200px",
+  resp: "1000px",
 };
 const App = () => {
   return (
