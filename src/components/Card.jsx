@@ -7,17 +7,31 @@ const Card = () => {
     <div>
       {content.map((item) => {
         const img = item.image;
-        return (
-          <StyledCard>
-            <Flex>
+        if (item.id % 2 === 1) {
+          return (
+            <StyledCard>
               <Resim src={`./images/${img}`} alt="img" />
-              <Read>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </Read>
-            </Flex>
-          </StyledCard>
-        );
+              <Flex>
+                <Read>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </Read>
+              </Flex>
+            </StyledCard>
+          );
+        } else {
+          return (
+            <StyledCard>
+              <Flex>
+                <Read>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </Read>
+                <Resim src={`./images/${img}`} alt="img" />
+              </Flex>
+            </StyledCard>
+          );
+        }
       })}
     </div>
   );
